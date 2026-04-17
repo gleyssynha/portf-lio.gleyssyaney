@@ -1,0 +1,438 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .portfolio {
+    background: #e8f5e9;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #1b3a2d;
+    padding: 0;
+  }
+
+  .hero {
+    background: linear-gradient(160deg, #c8e6c9 0%, #a5d6a7 40%, #81c784 100%);
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #4caf50;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .avatar {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: #2e7d32;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #e8f5e9;
+    font-weight: 600;
+    border: 3px solid #fff;
+    margin-bottom: 1.2rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #1b3a2d;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #2e7d32;
+  }
+
+  .hero-sub {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #388e3c;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 0.8rem;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.7);
+    color: #2e7d32;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(46,125,50,0.3);
+  }
+
+  .section {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid #c8e6c9;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #388e3c;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #1b3a2d;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .section p {
+    font-size: 0.9rem;
+    color: #2d4a38;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .timeline {
+    display: flex; flex-direction: column; gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .timeline-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+
+  .dot-line {
+    display: flex; flex-direction: column; align-items: center;
+    padding-top: 4px;
+  }
+
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #4caf50;
+    border: 2px solid #2e7d32;
+    flex-shrink: 0;
+  }
+
+  .line {
+    width: 2px;
+    flex: 1;
+    background: #c8e6c9;
+    min-height: 30px;
+    margin-top: 4px;
+  }
+
+  .timeline-text h3 {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #1b3a2d;
+    margin-bottom: 2px;
+  }
+
+  .timeline-text span {
+    font-size: 0.78rem;
+    color: #4caf50;
+    font-weight: 400;
+  }
+
+  .timeline-text p {
+    font-size: 0.82rem;
+    color: #4a6b55;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .skill-card {
+    background: #fff;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 0.8rem;
+  }
+
+  .skill-card h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #2e7d32;
+    margin-bottom: 0.3rem;
+  }
+
+  .skill-card p {
+    font-size: 0.75rem;
+    color: #4a6b55;
+    line-height: 1.5;
+  }
+
+  .appsnack {
+    background: #fff;
+    border-radius: 14px;
+    border: 2px solid #a5d6a7;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .appsnack::before {
+    content: 'Em desenvolvimento';
+    position: absolute;
+    top: 14px; right: -28px;
+    background: #4caf50;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 4px 36px;
+    transform: rotate(45deg);
+    letter-spacing: 0.05em;
+  }
+
+  .app-icon {
+    width: 54px; height: 54px;
+    background: #2e7d32;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    margin-bottom: 0.8rem;
+  }
+
+  .appsnack h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #1b3a2d;
+    margin-bottom: 0.3rem;
+  }
+
+  .appsnack p {
+    font-size: 0.85rem;
+    color: #4a6b55;
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
+  }
+
+  .features {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .feature {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.8rem;
+    color: #2d4a38;
+  }
+
+  .feat-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #4caf50;
+    flex-shrink: 0;
+  }
+
+  .bridge {
+    background: #f1f8e9;
+    border-left: 4px solid #4caf50;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .bridge p {
+    font-size: 0.88rem;
+    color: #2d4a38;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .contact-row {
+    display: flex; flex-direction: column; gap: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .contact-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.85rem;
+    color: #2d4a38;
+  }
+
+  .contact-icon {
+    width: 32px; height: 32px;
+    background: #c8e6c9;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  footer {
+    background: #2e7d32;
+    color: #c8e6c9;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+</style>
+
+<div class="portfolio">
+
+  <div class="hero">
+    <div class="avatar">GO</div>
+    <div class="hero-content">
+      <div class="hero-sub">Portfólio Profissional</div>
+      <h1>Gleyssyaney<br><em>de Sousa Oliveira</em></h1>
+      <div class="tags">
+        <span class="tag">Pedagoga</span>
+        <span class="tag">Empresária · Provedora de Internet</span>
+        <span class="tag">Graduanda em Sistemas para Internet</span>
+        <span class="tag">Desenvolvedora · AppSnack</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Sobre mim</div>
+    <div class="section-title">Educação, Tecnologia e Empreendedorismo</div>
+    <p>
+      Profissional com trajetória construída na interseção entre educação e negócios, hoje em plena transição para o universo da tecnologia. Formada em Pedagogia, desenvolvi habilidades essenciais em comunicação, liderança e organização — bases que sustentam minha atuação como empresária no setor de provedores de internet. Atualmente, a graduação em Sistemas para Internet amplia meu horizonte técnico e abre novas possibilidades de inovação para os negócios que lidero.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Trajetória</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="dot-line"><div class="dot"></div><div class="line"></div></div>
+        <div class="timeline-text">
+          <h3>Graduação em Pedagogia</h3>
+          <span>Formação concluída</span>
+          <p>Formação que alicerçou competências em comunicação humana, gestão de processos educativos e compreensão do comportamento organizacional.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot-line"><div class="dot"></div><div class="line"></div></div>
+        <div class="timeline-text">
+          <h3>Empresária · Provedor de Internet</h3>
+          <span>Em exercício</span>
+          <p>Gestão de empresa provedora de internet, com foco em qualidade de serviço, atendimento ao cliente e infraestrutura de conectividade.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot-line"><div class="dot"></div></div>
+        <div class="timeline-text">
+          <h3>Graduanda em Sistemas para Internet</h3>
+          <span>Em curso</span>
+          <p>Desenvolvimento de competências em programação, banco de dados, aplicações web e mobile — aplicadas diretamente aos desafios reais do seu negócio.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Conexão entre as áreas</div>
+    <div class="bridge">
+      <p>
+        A Pedagogia ensinou a entender pessoas. O empreendedorismo no setor de internet ensinou a operar com infraestrutura e demanda real. Sistemas para Internet é a peça que une tudo: a capacidade de criar soluções tecnológicas com sensibilidade humana e visão de negócio.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Competências</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Educação &amp; Comunicação</h4>
+        <p>Didática, gestão de equipes, mediação de conflitos e escuta ativa.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Gestão Empresarial</h4>
+        <p>Operação de provedor, atendimento, contratos e relacionamento com clientes.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Desenvolvimento Web</h4>
+        <p>HTML, CSS, JavaScript e construção de interfaces web responsivas.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Aplicações Mobile</h4>
+        <p>Desenvolvimento de apps, UX centrado no usuário e prototipagem.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Projeto em destaque</div>
+    <div class="appsnack">
+      <div class="app-icon">🥪</div>
+      <h3>AppSnack</h3>
+      <p>
+        Aplicativo mobile para pedidos de lanche, desenvolvido como projeto prático da graduação em Sistemas para Internet. O AppSnack integra a experiência de gestão empresarial com o aprendizado técnico em programação — resultado direto da fusão entre as áreas de atuação de Gleyssyaney.
+      </p>
+      <div class="features">
+        <div class="feature"><div class="feat-dot"></div>Catálogo de lanches com cardápio digital</div>
+        <div class="feature"><div class="feat-dot"></div>Realização e acompanhamento de pedidos</div>
+        <div class="feature"><div class="feat-dot"></div>Interface intuitiva para clientes e atendentes</div>
+        <div class="feature"><div class="feat-dot"></div>Integração com gestão de pedidos em tempo real</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Contato</div>
+    <div class="contact-row">
+      <div class="contact-item">
+        <div class="contact-icon">🔗</div>
+        <span>github.com/gleyssyaney</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <span>Brasil</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💼</div>
+        <span>Gestão · Tecnologia · Educação</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Gleyssyaney de Sousa Oliveira · Sistemas para Internet · 2025
+  </footer>
+
+</div>
